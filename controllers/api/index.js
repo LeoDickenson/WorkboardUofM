@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
+const baseRoute = require('./baseRoute');
+// const projectRoutes = require('./projectRoutes');
 
 router.use('/', baseRoute);
-router.use('/schedule', scheduleRoute);
+// router.use('/schedule', scheduleRoute);
 
 module.exports = router;
 
