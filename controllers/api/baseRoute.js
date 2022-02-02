@@ -1,3 +1,4 @@
+// CHANGE THIS GET BECAUSE THIS IS NOW OUR HOME ROUTE
 const router = require('express').Router();
 //homepage, {user} is a placeholder 
 router.get('/', async (req, res) => {
