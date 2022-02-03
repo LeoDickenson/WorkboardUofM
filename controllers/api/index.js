@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const baseRoute = require('./baseRoute');
+const signupRoute = require('./signup');
 // const projectRoutes = require('./projectRoutes');
 
-router.use('/', baseRoute);
+router.get('/', signupRoute);
 // router.use('/schedule', scheduleRoute);
 
 module.exports = router;
