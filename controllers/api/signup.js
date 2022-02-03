@@ -1,3 +1,4 @@
+const { response } = require('express');
 const Employee = require('../../models/employee');
 const router = require('express').Router();
 
@@ -49,6 +50,7 @@ router.post('/', async (req, res) => {
       };
   
       readAndAppend(newUser, './db/employees.json');
+      res.send('Success!');
     //   console.log(newUser)
     } else {
       console.error();

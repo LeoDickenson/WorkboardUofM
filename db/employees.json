@@ -14,15 +14,8 @@
         }
     },
     {
-        "firstname": "tes",
-        "lastname": "tes",
-        "username": "test",
-        "email": "test@test.com",
-        "password": "test"
-    },
-    {
-        "firstname": "tes",
-        "lastname": "tes",
+        "firstname": "test",
+        "lastname": "test",
         "username": "test",
         "email": "test@test.com",
         "password": "test"
