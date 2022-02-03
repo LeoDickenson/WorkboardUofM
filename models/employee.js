@@ -31,6 +31,14 @@ Employee.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
+    role: {
+      type: DataTypes.integer,
+      allowNull: true,
+      references: {
+        model: 'role',
+        key: 'id',
+    }
+    },
   },
   {
     sequelize,

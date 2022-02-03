@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "employee_firstname": "James",
+        "employee_lastname": "James",
+        "employee_username": "JJ1",
+        "employee_password": "jamesJames123",
+        "is_manager": false,
+        "role": 
+            {
+            "id": 1,
+            "role_name": "junior-developer",
+            "role_pay": 22.50,
+            "employee_id": 1
+            }
+    }
+]
