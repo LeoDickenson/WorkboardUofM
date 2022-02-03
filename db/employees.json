@@ -6,12 +6,32 @@
         "employee_username": "JJ1",
         "employee_password": "jamesJames123",
         "is_manager": false,
-        "role": 
-            {
+        "role": {
             "id": 1,
             "role_name": "junior-developer",
-            "role_pay": 22.50,
+            "role_pay": 22.5,
             "employee_id": 1
-            }
+        }
+    },
+    {
+        "firstname": "tes",
+        "lastname": "tes",
+        "username": "test",
+        "email": "test@test.com",
+        "password": "test"
+    },
+    {
+        "firstname": "tes",
+        "lastname": "tes",
+        "username": "test",
+        "email": "test@test.com",
+        "password": "test"
+    },
+    {
+        "firstname": "test",
+        "lastname": "test",
+        "username": "test",
+        "email": "test@test.com",
+        "password": "test"
     }
 ]
