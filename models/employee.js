@@ -19,6 +19,10 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    employee_email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     employee_username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,14 +35,20 @@ Employee.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    role: {
-      type: DataTypes.integer,
-      allowNull: true,
-      references: {
-        model: 'role',
-        key: 'id',
-    }
-    },
+    // role_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
+    //   references: {
+    //     model: 'role',
+    //     key: 'id',
+    // }
+    // },
+    // hooks: {
+    //   async beforeCreate(newUserData) {
+    //     newUserData.password = await bcrypt.hash(newUserData.password, 10);
+    //     return newUserData;
+    //   },
+    // },
   },
   {
     sequelize,
