@@ -14,17 +14,10 @@
         }
     },
     {
-        "firstname": "test",
-        "lastname": "test",
-        "username": "test",
-        "email": "test@test.com",
-        "password": "test"
-    },
-    {
-        "firstname": "test",
-        "lastname": "test",
-        "username": "test",
-        "email": "test@test.com",
-        "password": "test"
+        "employee_firstname": "Test1",
+        "employee_lastname": "Test1",
+        "employee_email": "test1@gmail.com",
+        "employee_username": "Test1",
+        "employee_password": "testtest"
     }
 ]
