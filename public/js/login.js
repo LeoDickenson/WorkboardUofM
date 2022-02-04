@@ -1,39 +1,38 @@
 //PULLED FROM UNIT 14 ACTVITY 16
-// const loginFormHandler = async (event) => {
-//     event.preventDefault();
+const loginFormHandler = async (event) => {
+    event.preventDefault();
 
-//     const email = document.querySelector('#email-login').value.trim();
-//     const password = document.querySelector('#password-login').value.trim();
+    const employee_email = document.querySelector('#email-login').value.trim();
+    const employee_password = document.querySelector('#password-login').value.trim();
 
-//     if (email && password) {
-//       const response = await fetch('/api/users/login', {
-//         method: 'POST',
-//         body: JSON.stringify({ email, password }),
-//         headers: { 'Content-Type': 'application/json' },
-//       });
+    if (employee_email && employee_password) {
+        const response = await fetch('/api/signup/login', {
+            method: 'POST',
+            body: JSON.stringify({ employee_email, employee_password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-//       if (response.ok) {
-//         document.location.replace('/');
-//       } else {
-//         alert('Failed to log in.');
-//       }
-//     }
-//   };
+        if (response) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in.');
+        }
+    }
+};
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const firstname = document.querySelector('#firstname-signup').value.trim();
-    const lastname = document.querySelector('#lastname-signup').value.trim();
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+    const employee_firstname = document.querySelector('#firstname-signup').value.trim();
+    const employee_lastname = document.querySelector('#lastname-signup').value.trim();
+    const employee_email = document.querySelector('#email-signup').value.trim();
+    const employee_password = document.querySelector('#password-signup').value.trim();
 
 
-    if (firstname && lastname && username && email && password) {
-        const response = await fetch('/api/signup/', {
+    if (employee_firstname && employee_lastname && employee_email && employee_password) {
+        const response = await fetch('/api/signup', {
             method: 'POST',
-            body: JSON.stringify({ firstname, lastname, username, email, password }),
+            body: JSON.stringify({ employee_firstname, employee_lastname, employee_email, employee_password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -45,9 +44,9 @@ const signupFormHandler = async (event) => {
     }
 };
 
-//   document
-//     .querySelector('.login-form')
-//     .addEventListener('submit', loginFormHandler);
+document
+    .querySelector('#loginBtn')
+    .addEventListener('click', loginFormHandler);
 
 document
     .querySelector('#createBtn')

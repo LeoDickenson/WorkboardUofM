@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 // Import express-session
-// const session = require('express-session');
+const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 const routes = require('./controllers');
@@ -18,7 +18,7 @@ const sess = {
   saveUninitialized: true,
 };
 
-// app.use(session(sess));
+app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
 
