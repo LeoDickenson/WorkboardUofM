@@ -8,14 +8,8 @@ const {
   writeToFile,
 } = require('../../utils/fsUtils');
 
-// CHANGE THIS GET BECAUSE THIS IS NOW OUR HOME ROUTE
-//login page get
-// router.get('/', async (req, res) => {
-//     res.render('signup');
-// });
-
 //signup post
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const dbUserData = await Employee.create({
       employee_firstname: req.body.employee_firstname,
@@ -34,38 +28,12 @@ router.post('/', async (req, res) => {
   }
 });
 
-// router.post('/', async (req, res) => {
-//     console.log(req.body);
-
-//     const { employee_firstname, employee_lastname, employee_email, employee_password } = await req.body;
-//     console.log(req.body);
-//     if (req.body) {
-//       const newUser = {
-//         employee_firstname,
-//         employee_lastname,
-//         employee_email,
-//         employee_password
-//       };
-
-//       readAndAppend(newUser, './db/employees.json');
-//       res.send('Success!');
-//     //   console.log(newUser)
-//     } else {
-//       console.error();
-//     }
-// });
-
-//THIS ROUTE GETS THE DATA AND DISPLAYS IT 
-// router.get('/', (req, res) => {
-//   readFromFile('./db/employees.json').then((data) => res.json(JSON.parse(data)));
-// });
-
 // sign in post
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await Employee.findOne({
       where: {
-        email: req.body.employee_email,
+        employee_email: req.body.employee_email,
       },
     });
 
@@ -94,6 +62,17 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+router.post('/logout', (req, res) => {
+  // When the user logs out, the session is destroyed
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
   }
 });
 
