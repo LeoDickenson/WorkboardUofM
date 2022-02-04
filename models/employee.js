@@ -23,10 +23,6 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    employee_username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     employee_password: {
         type: DataTypes.STRING,
         allowNull: false,
