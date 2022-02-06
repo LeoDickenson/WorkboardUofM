@@ -1,3 +1,32 @@
+body {
+    height: 100%;
+}
+#main-container {
+    height: 100%;
+}
 #test {
     font-size: xx-large,
+}
+#main-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logout {
+    margin-bottom: 25%;
+}
+#sidebar-btns {
+height: 100%;
+border: 5px;
+border-style: solid;
+border-color: black;
+}
+
+.sidebar-btns {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 25%;
+    width: 100%;
+    border-radius: 10%;
 }
