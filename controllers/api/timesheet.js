@@ -26,6 +26,7 @@ router.put('/clockout/', async (req, res) => {
         {
             where: {
                 employee_id: req.session.employee_id,
+                // sess: req.session.sess,
             }
         })
         res.status(200).json(dbtimesheetData);

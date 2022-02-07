@@ -19,7 +19,11 @@ Time.init(
                 model: 'employee',
                 key: 'id',
             }
-        }
+        },
+        sess: {
+            type: DataTypes.INTEGER,
+            auto_increment: true,
+        },
     },
     {
         sequelize,
