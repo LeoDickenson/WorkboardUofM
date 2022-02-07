@@ -31,11 +31,13 @@ router.post('/create', async (req, res) => {
 // sign in post
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await Employee.findOne({
+    const dbUser = await Employee.findOne({
       where: {
         employee_email: req.body.employee_email,
       },
     });
+    const dbUserData = await dbUser.get();
+    console.log(dbUserData);
 
     if (!dbUserData) {
       res
@@ -44,7 +46,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.employee_password);
+    // const validPassword = await bcrypt.compare(req.body.employee_password, dbUserData.password);
+    const validPassword = req.body.employee_password === dbUserData.employee_password;
 
     if (!validPassword) {
       res
@@ -55,6 +58,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.employee_id = dbUserData.id;
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
