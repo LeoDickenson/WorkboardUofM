@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { response } = require('express');
-const Time = require('../../models/time');
+const Time = require('../../models/Time');
 
 router.post('/clockin', async (req, res) => {
     try {
