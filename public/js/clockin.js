@@ -1,19 +1,20 @@
 const clockIn = async (event) => {
     event.preventDefault();
 
-    const clockin_time = document.querySelector('#time').value;
+    const clockin_time = document.querySelector('#time').textContent;
+    const dbclockin_time = parseInt(clockin_time.replaceAll(':', ''));
 
-    if (clockin_time) {
+    if (dbclockin_time) {
         const response = await fetch ('/api/timesheet/clockin', {
             method: 'POST',
-            body: clockin_time,
+            body: JSON.stringify({clockin_time: dbclockin_time}),
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response) {
+        if (response.ok) {
             document.location.replace('/');
         } else {
-            alert('Failed to sign up.');
+            alert('Failed to clock in.');
         }
     }
 };

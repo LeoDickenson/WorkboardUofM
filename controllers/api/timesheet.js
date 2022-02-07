@@ -16,14 +16,14 @@ router.post('/clockin', async (req, res) => {
 });
 
 
-router.put('/clockout', async (req, res) => {
+router.put('/clockout/:id', async (req, res) => {
     try {
         const dbtimesheetData = await Time.update({
             clockout_time: req.body.clockout_time,
         },
         {
             where: {
-                id: req.params.id,
+                employee_id: req.params.employee_id,
             }
         })
         res.status(200).json(dbtimesheetData);
