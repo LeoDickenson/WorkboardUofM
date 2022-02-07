@@ -1,4 +1,4 @@
-const Employee = require('../models/employee');
+const Employee = require('../models/Employee');
 
 const router = require('express').Router();
 

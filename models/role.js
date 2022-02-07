@@ -19,13 +19,13 @@ Role.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    employee_id: {
-      type: DataTypes.INTEGER,
-      references: {
-          model: 'employee',
-          key: 'id',
-      }
-    },
+    // employee_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //       model: 'employee',
+    //       key: 'id',
+    //   }
+    // },
   },
   {
     sequelize,
