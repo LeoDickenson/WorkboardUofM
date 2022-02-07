@@ -12,6 +12,13 @@ Time.init(
         clockout_time: {
             type: DataTypes.TIME,
             allowNull: true,
+        },
+        employee_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'employee',
+                key: 'id',
+            }
         }
     },
     {

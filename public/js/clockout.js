@@ -1,19 +1,20 @@
 const clockOut = async (event) => {
     event.preventDefault();
 
-    const clockout_time = document.querySelector('#time').value;
+    const clockout_time = document.querySelector('#time').textContent;
+    const dbclockout_time = parseInt(clockout_time.replaceAll(':', ''));
 
-    if (clockout_time) {
+    if (dbclockout_time) {
         const response = await fetch ('/api/timesheet/clockout', {
-            method: 'POST',
-            body: clockout_time,
+            method: 'PUT',
+            body: JSON.stringify({clockout_time: dbclockout_time}),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response) {
             document.location.replace('/');
         } else {
-            alert('Failed to sign up.');
+            alert('Failed to clock out.');
         }
     }
 };
