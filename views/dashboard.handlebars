@@ -27,6 +27,9 @@
                     <div>
                         Welcome to Workboard! Select an option to get started.
                     </div>
+                    {{#if employee.is_manager}}
+                    {{> manager-view}}
+                    {{/if}}
                 </section>
             </div>
         </div>
