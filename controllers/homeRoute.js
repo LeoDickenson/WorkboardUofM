@@ -3,6 +3,10 @@ const Employee = require('../models/Employee');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
   res.render('dashboard');
 });
 
