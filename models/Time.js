@@ -20,10 +20,10 @@ Time.init(
                 key: 'id',
             }
         },
-        sess: {
-            type: DataTypes.INTEGER,
-            auto_increment: true,
-        },
+        // sess: {
+        //     type: DataTypes.INTEGER,
+        //     auto_increment: true,
+        // },
     },
     {
         sequelize,
