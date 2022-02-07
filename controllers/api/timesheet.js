@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { response } = require('express');
-const Time = require('../../models/Time');
+const Time = require('../../models/time');
 
 router.post('/clockin', async (req, res) => {
     try {
@@ -20,13 +20,14 @@ router.post('/clockin', async (req, res) => {
 router.put('/clockout/', async (req, res) => {
     console.log(req.body);
     try {
+        const timesheetData = await Time.findAll();
+        const timesheet = timesheetData[timesheetData.length-1].get({ plain: true });
         const dbtimesheetData = await Time.update({
             clockout_time: req.body.clockout_time,
         },
         {
             where: {
-                employee_id: req.session.employee_id,
-                // sess: req.session.sess,
+                id: timesheet.id
             }
         })
         res.status(200).json(dbtimesheetData);
