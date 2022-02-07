@@ -1,12 +1,12 @@
 const clockIn = async (event) => {
     event.preventDefault();
 
-    const time = document.querySelector('#clock-in').value.trim();
+    const clockin_time = document.querySelector('#time').value;
 
-    if (time) {
+    if (clockin_time) {
         const response = await fetch ('/api/timesheet/clockin', {
             method: 'POST',
-            body: time,
+            body: clockin_time,
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -19,5 +19,5 @@ const clockIn = async (event) => {
 };
 
 document 
-    .querySelector('#clock-in')
+    .querySelector('#clock-in-btn')
     .addEventListener('click', clockIn);
