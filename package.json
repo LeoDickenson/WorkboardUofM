@@ -13,5 +13,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/index.js"
-  }
+  },
+  "name": "workboarduofm",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoDickenson/WorkboardUofM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoDickenson/WorkboardUofM/issues"
+  },
+  "homepage": "https://github.com/LeoDickenson/WorkboardUofM#readme"
 }
