@@ -29,9 +29,5 @@
   "bugs": {
     "url": "https://github.com/LeoDickenson/WorkboardUofM/issues"
   },
-  "homepage": "https://github.com/LeoDickenson/WorkboardUofM#readme",
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-  }
+  "homepage": "https://github.com/LeoDickenson/WorkboardUofM#readme"
 }
