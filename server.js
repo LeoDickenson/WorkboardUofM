@@ -7,6 +7,7 @@ const exphbs = require('express-handlebars');
 var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
+Handlebars.registerPartial('manager-view', '{{prefix}}');
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');

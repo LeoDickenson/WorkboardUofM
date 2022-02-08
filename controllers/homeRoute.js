@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.redirect('/login');
     return;
   }
-  res.render('dashboard');
+  res.render('dashboard', { is_manager: req.session.is_manager });
 });
 
 router.get('/login', (req, res) => {
